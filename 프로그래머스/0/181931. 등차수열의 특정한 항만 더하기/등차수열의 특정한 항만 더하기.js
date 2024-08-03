@@ -11,4 +11,4 @@ function solution(a, d, included) {
     return answer;
 }
 
-//3 7 11 15 19
+// todo reduce를 한줄로 끝낼 수 있음 3번째 인자 사용
