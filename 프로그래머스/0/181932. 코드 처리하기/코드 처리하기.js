@@ -7,13 +7,11 @@ function solution(code) {
         const isCodeItemOne = codeItem === "1";
         
         if(isCodeItemOne){
-            mode = !mode;
+            mode = 1 - mode;
         }else{
             const isIdxEven = idx % 2 === 0;
-            if(!mode && isIdxEven){
-                ret += codeItem;
-            }
-            if(mode && !isIdxEven){
+            
+            if(!mode && isIdxEven || mode && !isIdxEven){
                 ret += codeItem;
             }
         }
