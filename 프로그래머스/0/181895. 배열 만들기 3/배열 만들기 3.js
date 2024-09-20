@@ -1,6 +1,6 @@
 function solution(arr, intervals) {
-    const [a, b] = intervals;
+    const [[a1, b1], [a2, b2]] = intervals;
     
-    const answer = [...arr.slice(a[0], a[1] + 1), ...arr.slice(b[0], b[1] + 1)]
+    const answer = [...arr.slice(a1, b1 + 1), ...arr.slice(a2, b2 + 1)]
     return answer;
 }
