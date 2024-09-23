@@ -10,6 +10,6 @@ function solution(arr, k) {
     
     const result = answer.length < k ? [...answer, ...Array(k - answer.length).fill(-1)] : answer;
     
-    
+    // set으로 중복을 다제거하면됨;
     return result;
 }
