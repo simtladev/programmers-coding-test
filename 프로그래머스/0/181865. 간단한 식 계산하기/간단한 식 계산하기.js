@@ -1,18 +1,15 @@
+const operator = {
+    "+": (a, b) => a + b,
+    "-": (a, b) => a - b,
+    "*": (a, b) => a * b,
+    
+}
+
 function solution(binomial) {
     const [a, op, b] = binomial.split(" ");
     
     
-    if(op === "+"){
-        return +a + +b;
-    }
-    
-    if(op === "-"){
-        return a - b;
-    }
-    
-    if(op === "*"){
-        return a * b;
-    }
+    const answer = operator[op](+a, +b);
     
     
     
