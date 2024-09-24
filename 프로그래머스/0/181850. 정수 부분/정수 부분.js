@@ -1,4 +1,4 @@
 function solution(flo) {
-    const answer = Math.floor(flo);
+    const answer = Math.trunc(flo);
     return answer;
 }
