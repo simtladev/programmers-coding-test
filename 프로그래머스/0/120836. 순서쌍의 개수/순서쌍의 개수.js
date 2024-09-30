@@ -1,10 +1,6 @@
 function solution(n) {
-    let answer = 0;
-    
-    for(let i = 1; i<=n; i++){
-       if(n % i === 0) answer++;
-    }
-    
-    
-    return answer;
+   const answer = Array.from({length: n}, (_, i)=>{
+       return i + 1;
+   }).filter((v)=> n % v === 0).length;
+   return answer;
 }
