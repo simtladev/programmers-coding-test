@@ -1,11 +1,9 @@
 function solution(n) {
-    let answer = 1;
-    let num = 1;
-    while(num <= n){
-        answer++;
-        num *= answer;
+    let answer = 0, count = 1, i = 1;
+    while(count <= n){
+        i++, answer++;
+        count = count * i;
     }
-    return answer - 1;
-}
 
-1 * 2 * 3
+    return answer;
+}
