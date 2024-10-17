@@ -1,17 +1,9 @@
 function solution(dots) {
     const [a,b,c,d] = dots;
-    if(slope(a, b) === slope(c, d)){
-        return 1;
-    }
     
-    if(slope(a, c) === slope(b, d)){
-        return 1;
-    }
-    
-    if(slope(a, d) === slope(b, c)){
-        return 1;
-    }
-    
+    if(slope(a, b) === slope(c, d)) return 1;
+    if(slope(a, c) === slope(b, d)) return 1;
+    if(slope(a, d) === slope(b, c)) return 1;
     
     return 0;
 }
