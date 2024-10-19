@@ -1,18 +1,17 @@
 function solution(s, n) {
-    var answer = [...s].map((v)=> {
-        if(v === " ") return " ";
-        
-        // 소문자
-        if(v.charCodeAt() >= 97 && v.charCodeAt() <= 122){
-            const a = (v.charCodeAt() + n) % 123 < 97 ? (v.charCodeAt() + n) % 123 + 97 : (v.charCodeAt() + n) % 123
-            
-            return String.fromCharCode(a);
-        }else{
-            const b = (v.charCodeAt() + n) % 91 < 65 ? (v.charCodeAt() + n) % 91 + 65 : (v.charCodeAt() + n) % 91
-            
-            return String.fromCharCode(b);
+    return [...s].map((char) => {
+        if (char === " ") return " ";
+
+        const charCode = char.charCodeAt();
+        const isLower = charCode >= 97 && charCode <= 122;
+        const isUpper = charCode >= 65 && charCode <= 90;
+
+        if (isLower) {
+            return String.fromCharCode((charCode - 97 + n) % 26 + 97);
+        } else if (isUpper) {
+            return String.fromCharCode((charCode - 65 + n) % 26 + 65);
         }
-  
+        
+        return char;
     }).join("");
-    return answer;
 }
