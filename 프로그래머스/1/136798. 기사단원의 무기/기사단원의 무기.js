@@ -18,5 +18,3 @@ function solution(number, limit, power) {
         
     return answer; 
 }
-
-124
