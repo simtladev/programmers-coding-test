@@ -10,4 +10,6 @@ function solution(keymap, targets) {
         return result;
     },[]);
     return answer;
+    
+    //map으로 하면 더 좋을듯
 }
