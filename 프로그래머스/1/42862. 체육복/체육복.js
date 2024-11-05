@@ -1,8 +1,8 @@
 function solution(n, lost, reserve) {
     let answer = n - lost.length;
     
-    let realLost= lost.filter((v)=>!reserve.includes(v));
-    let realReserve= reserve.filter((v)=>!lost.includes(v));
+    const realLost= lost.filter((v)=>!reserve.includes(v));
+    const realReserve= reserve.filter((v)=>!lost.includes(v));
     answer+= lost.length - realLost.length;
     
     realLost.sort((a,b)=>a-b);
