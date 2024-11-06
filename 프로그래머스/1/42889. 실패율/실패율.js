@@ -1,19 +1,18 @@
 function solution(N, stages) {
-    const stageObject = stages.reduce((acc, cur) => {
-        acc[cur] = (acc[cur] || 0) + 1;
-        return acc;
-    }, {});
-
+    
+    const stageCounts = stages.filter((v)=> v <= N).reduce((acc, cur)=> (acc[cur] = (acc[cur] || 0) + 1, acc), {});
     const failureRates = {};
-    let playersRemaining = stages.length;
-
-    for (let i = 1; i <= N; i++) {
-        const playersOnStage = stageObject[i] || 0;
-        failureRates[i] = playersOnStage / playersRemaining;
-        playersRemaining -= playersOnStage;
+    
+    let playersPassed = 0;
+    for(let i = 1; i <= N; i++){
+        const playersOnStage = stageCounts[i] || 0;
+        const totalPlayersReached  = stages.length - playersPassed;
+        
+        failureRates[i] = playersOnStage / (totalPlayersReached  || 1);
+        playersPassed += playersOnStage;   
     }
-
-    return Object.entries(failureRates)
-        .sort((a, b) => b[1] - a[1] || a[0] - b[0])
-        .map(v => +v[0]);
+    
+    
+    const answer = Object.entries((failureRates)).sort((a,b)=> b[1] - a[1]).map((v)=> +v[0]);    
+    return answer;
 }
