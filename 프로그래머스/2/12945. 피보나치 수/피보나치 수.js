@@ -1,13 +1,9 @@
 function solution(n) {
-    if (n <= 0) return 0;
-    if (n === 1) return 1;
-
-    let a = BigInt(0), b = BigInt(1), result;
+    const answer = [0, 1];
+    
     for (let i = 2; i <= n; i++) {
-        result = a + b;
-        a = b;
-        b = result;
+        answer.push((answer[i - 1] + answer[i - 2]) % 1234567);
     }
 
-    return result % BigInt(1234567);
+    return answer.pop();
 }
