@@ -1,5 +1,4 @@
-function solution(s)
-{
+function solution(s){
     const stack = [];
     
     for(const word of s){
@@ -10,7 +9,6 @@ function solution(s)
         }
     }
     
-    
-    
-    return !!stack.length ? 0 : 1;
+    const answer = !!stack.length ? 0 : 1
+    return answer;
 }
