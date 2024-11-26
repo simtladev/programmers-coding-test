@@ -1,4 +1,5 @@
 function solution(n) {
-    const answer = Array(n).fill(1).map((v, i)=> v + i).filter((v)=> v % 2 === 0).reduce((acc, cur)=> acc + cur, 0);
+    const answer = Array(n).fill(0).reduce((acc, _, i)=> (i + 1) % 2 === 0 ? acc + i + 1 : acc, 0);
+    
     return answer;
 }
