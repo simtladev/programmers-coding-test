@@ -1,4 +1,4 @@
 function solution(num, n) {
-    var answer = num % n === 0 ? 1 : 0;
+    const answer = +!(num % n);
     return answer;
 }
