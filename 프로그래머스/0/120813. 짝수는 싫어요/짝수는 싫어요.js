@@ -1,7 +1,4 @@
 function solution(n) {
-    const answer = Array(n).fill(1).reduce((acc, cur, i)=> {
-        if((cur + i) % 2 !== 0) acc.push(cur + i);
-        return acc;
-    },[]);
+    const answer = Array.from({length: n}, (_, i)=> i + 1).filter((v)=> v % 2 !== 0);
     return answer;
 }
